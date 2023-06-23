@@ -8,40 +8,36 @@ double ReadInt(string text)
     double number = Convert.ToInt32(Console.ReadLine());
     return number;
 }
-//
-Double Resultation(double A, double B)
+
+double Resultation(double A, double B)
 {
-    
+
     double result = A;
-    for (int i = 2; i <= B; i++)
+    if (B > 0)
     {
-        result = result * A;
+        for (int i = 2; i <= B; i++)
+        {
+            result = result * A;
+        }
     }
+    else if (B < 0)
+
+    {
+        for (int i = -2; B <= i; i--)
+        {
+            result = result * A;
+        }
+        result = 1 / result;
+    }
+    else{
+        result = A-A+1;
+    }
+
+
     return result;
+
 }
-//i+=1;}
 double A = ReadInt("Введите число, которое потом возведёте в степень:");
 double B = ReadInt("Введите степень:");
 double C = Resultation(A, B);
-System.Console.WriteLine("Ответ с функцией " + C);
-if (B > 0)
-{
-    double result = A;
-    for (int i = 2; i <= B; i++)
-    {
-        result = result * A;
-        //i+=1;
-
-    }
-    System.Console.WriteLine(A + " в степени " + B + " равно " + result);
-}
-else if (B < 0)
-{
-    double result = A;
-    for (int i = -2; B <= i; i--)
-    {
-        result = result * A;
-    }
-    System.Console.WriteLine(A + " в степени " + B + " равно " + (1 / result));
-}
-else { Console.WriteLine("Если вы ввели стень 0, то ответ будет 1"); }
+System.Console.WriteLine(A + " в степени " + B + " равно " + C);
